@@ -26,21 +26,20 @@
   <div class="container">
     <header>
       <div class="wrapper">
-        <?php if($sitelogo) : ?>
-        <h1>
-          <a href="<?php echo home_url();?>" class="site-logo" title="<?php echo bloginfo('name'); ?>" >
-            <?php echo $sitelogo ? '<img src='.$sitelogo.' alt="site-logo">' : null; ?>
-          </a>
-        </h1>
-        <?php endif; ?>
+        <?php
+        if (function_exists('the_custom_logo')) {
+          // the_custom_logo();
+          $custom_logo_id = get_theme_mod('custom_logo');
+          $logo = wp_get_attachment_image_src($custom_logo_id);
+        }
+        ?>
+				<h1><a href=""><img class="logo" src="<?php echo $logo[0] ?>" alt="logo"><span>Pioneer Academics</span></a></h1>
+
         <div class="mainmenu" id="navigationMenu">
           <nav class="menu">
             <?php $args = array('theme_location' => 'primary');
             wp_nav_menu($args); ?>
           </nav>
-          <div class="search-desktop">
-            <?php get_search_form(); ?>
-          </div>
         </div>
       </div>
     </header>
