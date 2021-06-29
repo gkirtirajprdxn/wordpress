@@ -63,3 +63,11 @@ header #menu-header-menu li {
     width: 25%;
     text-align: center;
 }
+
+/* footer */
+
+.footer-container {
+    padding: 20px 0;
+    background: #808080;
+    color: #fff;
+}
