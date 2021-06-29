@@ -9,17 +9,13 @@ global $post;
       $update_heading = get_sub_field('pioneer_updates_heading'); 
       echo '<h2>';
       echo $update_heading;
-      echo '</h2>';
-    endwhile; 
-  endif; ?>
+      echo '</h2>'; ?>
   <!-- Recent Posts -->
   <div class="recent-container">
     <div class="recent-post-container">
-      <?php if( have_rows('pioneer') ):
-        while( have_rows('pioneer') ): the_row();
-          $news = get_sub_field('news');
+      <?php $news = get_sub_field('news');
           if( $news ): 
-            $args = array( 'posts_per_page' => 1, 'orderby' => 'post_date', 'post_type' => 'news' );
+            $args = array( 'posts_per_page' => 1, 'post__in' => $news, 'orderby' => 'post_date', 'post_type' => 'news' );
             $news = get_posts( $args ); ?>
             <div class="news">
               <ul class="pl-0">
@@ -37,16 +33,12 @@ global $post;
               </ul>
             </div>
             <?php wp_reset_postdata();
-          endif;
-        endwhile;
-      endif; ?>
+          endif; ?>
     </div>   
     <div class="recent-post-container-ul">
-    <?php if( have_rows('pioneer') ):
-      while( have_rows('pioneer') ): the_row();
-        $news = get_sub_field('news');
+    <?php $news = get_sub_field('news');
         if( $news ): 
-          $args = array( 'posts_per_page' => 3, 'orderby' => 'post_date', 'post_type' => 'news', 'offset' => 1 );
+          $args = array( 'posts_per_page' => 3, 'post__in' => $news, 'orderby' => 'post_date', 'post_type' => 'news', 'offset' => 1 );
           $news = get_posts( $args ); ?>
           <div class="news">
             <ul class="pl-0">
@@ -64,11 +56,11 @@ global $post;
             </ul>
           </div>
           <?php wp_reset_postdata();
-        endif;
-      endwhile;
-    endif; ?>
+        endif; ?>
+      </div>
+      </div>  
     </div>
-  </div>
-  </div>
+    <?php endwhile;
+  endif; ?>
 </div>
 
