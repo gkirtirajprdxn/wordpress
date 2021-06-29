@@ -68,7 +68,7 @@ header #menu-header-menu li {
 .recent-container { display: flex; }
 
 .recent-post-container { width: 50%; }
-.recent-container ul {
+.recent-container .recent-post-container-ul {
     width: 50%;
     list-style: none;
 }
