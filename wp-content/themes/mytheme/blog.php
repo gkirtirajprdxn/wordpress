@@ -1,6 +1,8 @@
 <?php
 /**
  * The main template file
+ * 
+ * Template Name:Blog
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -12,12 +14,16 @@
  * @package My_Theme
  */
 
- 
 get_header();
 
-if (have_posts()) {
-  while(have_posts()) {
-    the_post();
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 4
+);
+$the_query = new WP_Query( $args );
+if ($the_query -> have_posts()) {
+  while($the_query -> have_posts()) {
+    $the_query -> the_post();
     get_template_part('template-parts/content', 'archieve');
   }
 } 

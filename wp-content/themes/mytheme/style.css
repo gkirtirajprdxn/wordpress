@@ -64,10 +64,24 @@ header #menu-header-menu li {
     text-align: center;
 }
 
-/* footer */
+/* recent posts */
+.recent-container { display: flex; }
 
+.recent-post-container { width: 50%; }
+.recent-container ul {
+    width: 50%;
+    list-style: none;
+}
+
+.news-image { width: 545px; }
+.news-img { width: 80px; }
+
+.date { display: block; }
+
+/* footer */
 .footer-container {
     padding: 20px 0;
     background: #808080;
     color: #fff;
+    text-align: center;
 }

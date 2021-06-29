@@ -20,19 +20,15 @@
 	<?php wp_head(); ?>
 
 </head>
-
-<body <?php body_class(); ?>>
-
+<body>
   <div class="container">
     <header>
       <div class="wrapper">
-        <?php
-        if (function_exists('the_custom_logo')) {
+        <?php if (function_exists('the_custom_logo')) {
           // the_custom_logo();
           $custom_logo_id = get_theme_mod('custom_logo');
           $logo = wp_get_attachment_image_src($custom_logo_id);
-        }
-        ?>
+        } ?>
 				<h1><a href="<?php echo get_home_url() ?>"><img class="logo" src="<?php echo $logo[0] ?>" alt="logo"><span>Pioneer Academics</span></a></h1>
 
         <div class="mainmenu" id="navigationMenu">
