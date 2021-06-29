@@ -33,7 +33,7 @@
           $logo = wp_get_attachment_image_src($custom_logo_id);
         }
         ?>
-				<h1><a href=""><img class="logo" src="<?php echo $logo[0] ?>" alt="logo"><span>Pioneer Academics</span></a></h1>
+				<h1><a href="<?php echo get_home_url() ?>"><img class="logo" src="<?php echo $logo[0] ?>" alt="logo"><span>Pioneer Academics</span></a></h1>
 
         <div class="mainmenu" id="navigationMenu">
           <nav class="menu">
