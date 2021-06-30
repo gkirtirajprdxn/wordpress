@@ -63,11 +63,10 @@ get_header(); ?>
     endif;
     // coming soon using layout
     if( get_row_layout() == 'coming_soon' ):
-      $cs_heading = get_sub_field('cs_heading');
-      $cs_content = get_sub_field('cs_content');
-      echo $cs_heading; ?>
+      $cs_heading = get_sub_field('heading');
+      $cs_content = get_sub_field('content'); ?>
       <div class="cs-content">
-        <h3><?php echo $cs_heading; ?></h3>
+        <h3><?php echo $cs_heading ? $cs_heading : 'Coming Soon!' ?></h3>
         <div class="para"><?php echo $cs_content; ?></div>
       </div>
     <?php endif;
