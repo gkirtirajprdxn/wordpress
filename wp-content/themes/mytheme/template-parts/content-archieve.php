@@ -1,5 +1,5 @@
 <?php 
-$post_thumbnail = get_the_post_thumbnail_url('thumbnail');
+$post_thumbnail = get_the_post_thumbnail_url('','thumbnail');
 $permalink = get_the_permalink();
 $title = get_the_title();
 $date = get_the_date();
